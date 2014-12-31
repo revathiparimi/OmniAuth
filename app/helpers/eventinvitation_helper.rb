@@ -1,0 +1,2 @@
+module EventinvitationHelper
+end

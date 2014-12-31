@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi, <%= @user.name %>!</h1>
+    <p>You got an invitation for an Event</p>
+    <p>To check the Event follow this link <!--<%= link_to 'Event', "192.168.4.132:3000/events/#{$event_id}"%>-->
+
+    <%= link_to 'Event', "http://192.168.4.132:3000/events/#{@invitation.invitation_token}/?token=#{@invitation.invitation_token}" %>
+
+   
+
+    </p>
+
+  </body>
+</html>

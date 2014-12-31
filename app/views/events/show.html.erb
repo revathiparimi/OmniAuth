@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<% if  (!@event.has_valid_wepay_access_token? || !@event.has_wepay_account?) %>
+  <p>
+    <b>Please create an account to manage your money: </b>
+  <% redirect_uri = url_for(:controller => 'events', :action => 'oauth', :event_id => @event.id, :host => request.host_with_port) %>
+    <a href="<%= @event.wepay_authorization_url(redirect_uri, @user) %>">Click here to create your account</a>
+  </p>
+<% end %>
+
+<h1><%= @event.name %></h1>
+
+<% if (@event.has_wepay_account?) %>
+<br />
+<%= link_to "payment to #{@event.name} Now!", "/events/buy/#{@event.id}", :class => 'btn btn-danger btn-large', :id => 'buy-now-button' %>
+<% end %>
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @event.name %>
+</p>
+
+<p>
+  <strong>Start date time:</strong>
+  <%= @event.start_date_time %>
+</p>
+
+<p>
+  <strong>End date time:</strong>
+  <%= @event.end_date_time %>
+</p>
+
+<p>
+  <strong>Event type(Paid):</strong>
+  <%= @event.event_type %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @event.location %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @event.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

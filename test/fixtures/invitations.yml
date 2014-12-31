@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sender_id: 1
+  receipt_id: 1
+  event_id: 1
+  invitation_token: MyString
+  invitation_sent_at: 2014-12-22 12:38:58
+  invitation_accepted_at: 2014-12-22 12:38:58
+
+two:
+  sender_id: 1
+  receipt_id: 1
+  event_id: 1
+  invitation_token: MyString
+  invitation_sent_at: 2014-12-22 12:38:58
+  invitation_accepted_at: 2014-12-22 12:38:58
